@@ -1,0 +1,34 @@
+//https://wind-bow.gomix.me/twitch-api/channels/
+var channelIDs = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var channelsURL = "https://wind-bow.gomix.me/twitch-api/channels/";
+var streamsURL = "https://wind-bow.gomix.me/twitch-api/streams/";
+var content;
+var column = "<div class='col'>";
+
+$(document).ready(function() {
+    content = $("#content");
+
+    channelIDs.forEach(function(id) {
+        var url = channelsURL + id + "?callback=?";
+        var html = "<div class='row align-items-center'><div class='col'>";
+        var image = "<img width='60' height='60' src='";
+
+        $.getJSON(url, function(data) {
+            console.log(data);
+            
+            if (!data.error) {
+                html += image + data.logo + "'>" + "</div>";
+                html += column;
+                html += data.name + "</div>";
+                html += column;
+                html += data.game + "</div>";
+                html += column;
+                html += data.views + "</div>";
+                html += "</div>";
+                content.append(html);
+            }
+        });
+
+    });
+
+});
