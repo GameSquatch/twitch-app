@@ -43,10 +43,10 @@ $(document).ready(function() {
                     html += "</div>";
                     content.append(html);
 
-                    html = "<div class='row'><div class='col-12'>";
-                    html += "<button class='btn' type='button' data-toggle='collapse' data-target='#box" + i + "'>Info</button>";
+                    html = "<div class='row text-center'><div class='col-12'>";
+                    html += "<i class='fas fa-caret-down' role='button' data-toggle='collapse' data-target='#box" + i + "'></i>";
 
-                    html += "<div class='collapse' id='box" + i + "'>This will have additional info about the channel soon.</div>";
+                    html += "<div class='collapse text-left' id='box" + i + "'>This will have additional info about the channel soon.</div>";
                     html += "</div></div>";
    
 
