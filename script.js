@@ -6,6 +6,7 @@ var content;
 var column = "<div class='col'>";
 
 $(document).ready(function() {
+    var i = 0;
     content = $("#content");
 
     channelIDs.forEach(function(id) {
@@ -39,9 +40,18 @@ $(document).ready(function() {
                         html += "NO</div>";
                     }
 
-                    html += "</div>";//closes row div
+                    html += "</div>";
                     content.append(html);
 
+                    html = "<div class='row'><div class='col-12'>";
+                    html += "<button class='btn' type='button' data-toggle='collapse' data-target='#box" + i + "'>Info</button>";
+
+                    html += "<div class='collapse' id='box" + i + "'>This will be where I put extra channel info</div>";
+                    html += "</div></div>";
+   
+
+                    content.append(html);
+                    i++;
                 });//END getJSON
 
             }//ENDIF
