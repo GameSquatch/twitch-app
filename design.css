@@ -8,3 +8,22 @@
 .channel {
     margin: 8px 0;
 }
+
+.live {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  animation: blink 1s linear infinite alternate;
+}
+
+.offline {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+@keyframes blink {
+  0% {background-color: rgb(42, 89, 20);}
+  100% {background-color: rgb(110, 229, 55);}
+}

@@ -35,9 +35,9 @@ $(document).ready(function() {
                     console.log(data);
 
                     if (data.stream && data.stream !== null) {
-                        html += "STREAMING</div>";
+                        html += "<div class='live'></div></div>";
                     } else {
-                        html += "NO</div>";
+                        html += "<div class='offline'></div></div>";
                     }
 
                     html += "</div>";
@@ -46,7 +46,7 @@ $(document).ready(function() {
                     html = "<div class='row'><div class='col-12'>";
                     html += "<button class='btn' type='button' data-toggle='collapse' data-target='#box" + i + "'>Info</button>";
 
-                    html += "<div class='collapse' id='box" + i + "'>This will be where I put extra channel info</div>";
+                    html += "<div class='collapse' id='box" + i + "'>This will have additional info about the channel soon.</div>";
                     html += "</div></div>";
    
 
