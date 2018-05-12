@@ -13,6 +13,7 @@
 }
 .moreInfo {
     border: 1px solid black;
+    margin: 0;
 }
 
 .light {
@@ -34,6 +35,15 @@
 img {
     max-width: 50px;
     max-height: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+p {
+    margin-left: 4px;
 }
 
 @keyframes blink {
