@@ -5,6 +5,13 @@
     padding: 8px 0;
 }
 
+#footer {
+    padding: 8px 0;
+    color: white;
+    margin-top: 10px;
+    background-color: #7353ad;
+}
+
 .channel {
     margin: 8px 0 0;
     background-color: #8d8699;
@@ -44,6 +51,10 @@ a {
 
 p {
     margin-left: 4px;
+}
+
+i.fas.fa-caret-down:hover {
+    cursor: pointer;
 }
 
 @keyframes blink {
