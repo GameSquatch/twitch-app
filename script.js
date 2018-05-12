@@ -11,53 +11,46 @@ $(document).ready(function() {
 
     channelIDs.forEach(function(id) {
         var url = channelsURL + id + "?callback=?";
-        var html = "<div class='row align-items-center channel'>" + column;
-        var image = "<img width='60' height='60' src='";
+        var html = "<div class='row align-items-center channel'><div class='col-2'>";
+        var image = "<img src='";
 
-        $.getJSON(url, function(data) {
+        $.getJSON(url, function(data) {//channels
             console.log(data);
             
             if (!data.error) {
-                html += image + data.logo + "'>" + "</div>";
-                html += column;
+                html += image + data.logo + "'></div>";
+                html += "<div class='col-auto'>";
                 html += data.name + "</div>";
-                html += column;
-                html += data.game + "</div>";
-                html += column;
-                html += data.views + "</div>";
-                //html += "</div>";
-                //content.append(html);
 
                 url = streamsURL + id + "?callback=?";
-                $.getJSON(url, function(data) {
+                $.getJSON(url, function(data) {//streams
                     
-                    html += column;
+                    html += "<div class='col'>";
                     console.log(data);
 
                     if (data.stream && data.stream !== null) {
-                        html += "<div class='live'></div></div>";
+                        html += "<span class='live light float-right'></span></div>";
                     } else {
-                        html += "<div class='offline'></div></div>";
+                        html += "<span class='offline light float-right'></span></div>";
                     }
-
                     html += "</div>";
-                    content.append(html);
 
-                    html = "<div class='row text-center'><div class='col-12'>";
-                    html += "<i class='fas fa-caret-down' role='button' data-toggle='collapse' data-target='#box" + i + "'></i>";
+                    html += "<div class='row text-center'><div class='col-12'>";
+                    html += "<div><i class='fas fa-caret-down' role='button' data-toggle='collapse' data-target='#box" + i + "'></i></div>";
+                    html += "</div>";//close column
 
                     html += "<div class='collapse text-left' id='box" + i + "'>This will have additional info about the channel soon.</div>";
-                    html += "</div></div>";
    
-
+                    html += "</div>";//close collapse row and start row
                     content.append(html);
+
                     i++;
-                });//END getJSON
+                });//END getJSON streams
 
-            }//ENDIF
+            }//ENDIF !data.error
 
-        });//END getJSON
+        });//END getJSON channels
         
-    });//END FOREACH
+    });//END FOREACH channel ids
 
 });

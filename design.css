@@ -6,21 +6,34 @@
 }
 
 .channel {
-    margin: 8px 0;
+    margin: 8px 0 0;
+    background-color: #8d8699;
+    color: white;
+    padding: 8px 5px;
+}
+.moreInfo {
+    border: 1px solid black;
 }
 
-.live {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  animation: blink 1s linear infinite alternate;
-}
+.light {
+    position: relative;
 
-.offline {
+    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    
+}
+.live {
+    animation: blink 1s linear infinite alternate;
+}
+.offline {
     background-color: red;
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
 }
 
 @keyframes blink {
