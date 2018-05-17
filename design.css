@@ -1,63 +1,73 @@
 /*twitch color #7353ad*/
-#header {
-    background-color: #7353ad;
-    font-size: 18pt;
-    padding: 8px 0;
-}
-
-#footer {
-    padding: 8px 0;
-    color: white;
-    margin-top: 10px;
-    background-color: #7353ad;
-}
-
-.channel {
-    margin: 8px 0 0;
-    background-color: #8d8699;
-    color: white;
-    padding: 8px 5px;
-}
-.moreInfo {
-    border: 1px solid black;
-    margin: 0;
-}
-
-.light {
-    position: relative;
-
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    
-}
-.live {
-    animation: blink 1s linear infinite alternate;
-}
-.offline {
-    background-color: red;
-}
-
-img {
-    max-width: 50px;
-    max-height: 50px;
-}
-
-a {
-    color: white;
-    text-decoration: underline;
-}
-
-p {
-    margin-left: 4px;
-}
-
-i.fas.fa-caret-down:hover {
-    cursor: pointer;
-}
-
-@keyframes blink {
-  0% {background-color: rgb(42, 89, 20);}
-  100% {background-color: rgb(110, 229, 55);}
-}
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  #header {
+      background-color: #7353ad;
+      font-size: 18pt;
+      padding: 8px 0;
+  }
+  
+  #footer {
+      padding: 8px 0;
+      color: white;
+      margin-top: 10px;
+      background-color: #7353ad;
+  }
+  
+  .channel {
+      margin: 8px 0 0;
+      background-color: #7353ad;
+      color: white;
+      padding: 8px 5px;
+      box-shadow: 0 10px 6px -6px black;
+  }
+  .moreInfo {
+      border: 1px solid black;
+      margin: 0;
+  }
+  
+  .light {
+      position: relative;
+  
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      
+  }
+  .live {
+      animation: blink 1s linear infinite alternate;
+  }
+  .offline {
+      background-color: red;
+  }
+  
+  img {
+      max-width: 50px;
+      max-height: 50px;
+  }
+  
+  a {
+      color: white;
+      text-decoration: underline;
+  }
+  
+  p {
+      margin-left: 4px;
+  }
+  
+  i.fas.fa-caret-down:hover {
+      cursor: pointer;
+  }
+  
+  @keyframes blink {
+    0% {background-color: rgb(42, 89, 20);}
+    100% {background-color: rgb(110, 229, 55);}
+  }
+  
+  @media (min-width: 540px) {
+    span.light {
+      right: 50%;
+    }
+  }

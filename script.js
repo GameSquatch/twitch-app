@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     channelIDs.forEach(function(id) {
         var url = channelsURL + id + "?callback=?";
-        var html = "<div class='row align-items-center channel'><div class='col-2'>";
+        var html = "<div class='row align-items-center channel'><div class='col-sm-2 col-md-2'>";
         var image = "<img src='";
 
         $.getJSON(url, function(data1) {//channels
@@ -19,13 +19,13 @@ $(document).ready(function() {
             
             if (!data1.error) {
                 html += image + data1.logo + "'></div>";
-                html += "<div class='col-auto'>";
+                html += "<div class='col-sm-10 col-md-6'>";
                 html += "<a href='" + data1.url + "' target='_blank'>" + data1.display_name + "</a></div>";
 
                 url = streamsURL + id + "?callback=?";
                 $.getJSON(url, function(data2) {//streams
                     
-                    html += "<div class='col'>";
+                    html += "<div class='col-sm-10 col-md-4'>";
                     console.log(data2);
 
                     if (data2.stream && data2.stream !== null) {
